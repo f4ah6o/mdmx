@@ -1,13 +1,13 @@
 # Hello from File!
 
 これは `src/pages/hello.mdmx` から読み込まれたコンテンツです。
-よりMarkdownらしい自然な記法に改善されました。
+Markdownのスーパーセットとして、より簡潔に書けます。
 
 ### サンプルフォーム
 
 名前: [username]("お名前を入力してください")
 
-[サーバーに送信](POST /api/greet "hx-target=#response hx-include=[name='username']")
+[サーバーに送信](/api/greet "hx-target=#response hx-include=[name='username']")
 
 <div id="response">
   (まだ送信されていません)

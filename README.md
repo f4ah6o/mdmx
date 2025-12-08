@@ -1,14 +1,14 @@
 # mdmx
 
-Markdownライクな記法でインタラクティブなWebアプリケーションを作成できるフレームワーク。
-htmxと組み合わせて、よりMarkdownらしい自然な書き味を実現します。
+**Markdownのスーパーセット**としてインタラクティブなWebアプリケーションを記述できるフレームワーク。
+htmxと組み合わせて、より簡潔で自然な書き味を実現します。
 
 ## 特徴
 
-- **Markdownらしい記法**: 特殊な記号を使わず、標準的なMarkdownの延長線上の記法
-- **リンク記法でアクション**: `[送信](POST /api/greet)` のような直感的な記法
-- **インプット記法**: `[username]()` でフォーム入力欄を表現
-- **htmxサポート**: HTMX属性を自然に記述可能
+- **Markdownのスーパーセット**: 標準Markdownをそのまま拡張
+- **簡潔な記法**: HTTP動詞は省略可能（デフォルトPOST）
+- **直感的**: `[送信](/api/greet)` でボタン、`[username]()` でインプット
+- **通常のリンクも使える**: `https://` で始まるURLは通常のリンクとして機能
 
 ## 記法例
 
@@ -17,7 +17,7 @@ htmxと組み合わせて、よりMarkdownらしい自然な書き味を実現�
 
 名前: [username]("お名前を入力してください")
 
-[サーバーに送信](POST /api/greet "hx-target=#response hx-include=[name='username']")
+[サーバーに送信](/api/greet "hx-target=#response hx-include=[name='username']")
 
 <div id="response">
   結果がここに表示されます
@@ -28,14 +28,18 @@ htmxと組み合わせて、よりMarkdownらしい自然な書き味を実現�
 
 1. **インプット欄**: `[フィールド名]()`
    - 例: `[username]()` → `<input name="username" type="text" />`
-   - プレースホルダー指定: `[username]("名前を入力")`
+   - プレースホルダー: `[username]("名前を入力")`
 
-2. **ボタン/アクション**: `[テキスト](HTTP動詞 パス)`
-   - 例: `[送信](POST /api/greet)` → `<button hx-post="/api/greet">送信</button>`
-   - サポートする動詞: GET, POST, PUT, DELETE, PATCH
+2. **ボタン/アクション**: `[テキスト](パス)` または `[テキスト](HTTP動詞 パス)`
+   - 簡潔: `[送信](/api/greet)` → `<button hx-post="/api/greet">送信</button>`
+   - 明示: `[取得](GET /api/data)` → `<button hx-get="/api/data">取得</button>`
+   - `/`で始まるパスはデフォルトでPOST、必要な時だけHTTP動詞を指定
 
-3. **HTMX属性**: タイトルフィールドで指定
-   - 例: `[送信](POST /api "hx-target=#result")`
+3. **通常のリンク**: `https://` で始まるURLは通常のリンクとして機能
+   - 例: `[GitHub](https://github.com)` → 通常のリンク
+
+4. **HTMX属性**: タイトルフィールドで指定
+   - 例: `[送信](/api "hx-target=#result hx-swap=outerHTML")`
 
 ## setup
 

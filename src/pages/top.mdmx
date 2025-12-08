@@ -1,10 +1,10 @@
 # 別ファイルからのこんにちは
 
 これは `top.mdmx` に書かれた内容です。
-よりMarkdownらしい自然な記法になりました。
+Markdownのスーパーセットとして簡潔に書けます。
 
 名前: [username]()
 
-[送信する](POST /api/message "hx-target=#result")
+[送信する](/api/message "hx-target=#result")
 
 <div id="result"></div>
