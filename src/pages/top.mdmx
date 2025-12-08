@@ -1,0 +1,10 @@
+# 別ファイルからのこんにちは
+
+これは `top.mdmx` に書かれた内容です。
+コードと分離されてスッキリしました。
+
+![名前を入力](@input:username)
+[送信する](@post:/api/message "hx-target=#result")
+
+::: #result
+:::

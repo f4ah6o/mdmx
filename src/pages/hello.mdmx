@@ -1,0 +1,14 @@
+# Hello from File!
+
+これは `src/pages/hello.mdmx` から読み込まれたコンテンツです。
+コードとデザインが分離されてスッキリしました。
+
+### サンプルフォーム
+
+![名前を入力してください](@input:username "keyup changed delay:200ms")
+
+[サーバーに送信](@post:/api/greet "hx-target=#response hx-include=[name='username']")
+
+::: #response
+  (まだ送信されていません)
+:::
