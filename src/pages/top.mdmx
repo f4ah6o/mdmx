@@ -1,10 +1,10 @@
 # 別ファイルからのこんにちは
 
 これは `top.mdmx` に書かれた内容です。
-コードと分離されてスッキリしました。
+Markdownのスーパーセットとして簡潔に書けます。
 
-![名前を入力](@input:username)
-[送信する](@post:/api/message "hx-target=#result")
+名前: [username]()
 
-::: #result
-:::
+[送信する](/api/message "hx-target=#result")
+
+<div id="result"></div>
