@@ -54,6 +54,6 @@ pnpm init
 # 必要なライブラリのインストール
 pnpm add hono unified remark-parse remark-rehype rehype-stringify unist-util-visit
 
-# 開発用ライブラリ（Typescript, Wrangler, Viteなど）
-pnpm add -D wrangler typescript @cloudflare/workers-types vite @hono/vite-build @hono/vite-dev-server
+# 開発用ライブラリ（Typescript, cf CLI, Viteなど）
+pnpm add -D cf typescript @cloudflare/workers-types vite @cloudflare/vite-plugin@beta
 ```

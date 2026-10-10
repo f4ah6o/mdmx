@@ -2,9 +2,9 @@
   "name": "mdmx-app",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "deploy": "pnpm run build && wrangler deploy"
+    "dev": "cf dev",
+    "build": "cf build",
+    "deploy": "cf deploy"
   },
   "packageManager": "pnpm@10.24.0",
   "dependencies": {
@@ -16,11 +16,10 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "2.0.0-beta.sha-91c870c02",
     "@cloudflare/workers-types": "^4.20251205.0",
-    "@hono/vite-build": "^1.8.0",
-    "@hono/vite-dev-server": "^0.23.0",
+    "cf": "1.0.0-beta.14",
     "typescript": "^5.9.3",
-    "vite": "^7.2.7",
-    "wrangler": "^4.53.0"
+    "vite": "^7.2.7"
   }
 }
